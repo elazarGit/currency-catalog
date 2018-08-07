@@ -1,0 +1,18 @@
+.back{
+	width: 120px;
+	height: 40px;
+	background-color: #ececec;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 40px;
+}
+
+.back:hover{
+	background-color: #e0e0e0;
+}
+
+h2{
+	margin-left: 30px;
+}

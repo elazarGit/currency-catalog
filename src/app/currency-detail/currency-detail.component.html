@@ -1,0 +1,11 @@
+<div *ngIf="currency">
+  <h2>{{currency.name | uppercase}}</h2>
+  <ul>
+	<li *ngFor="let item of currency | keyvalue">
+		{{item.key}}: {{item.key == "updated" || item.key == "created" ? (item.value | date : 'medium') : item.value}}
+	</li>
+  </ul>
+ 
+ <div class="back" (click)="back()">Back</div>
+
+</div>

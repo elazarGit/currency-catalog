@@ -1,0 +1,27 @@
+div.page{
+	display: inline-block;
+	cursor: pointer;
+	background-color: #ececec;
+	border: 1px solid;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+}
+
+div.page:not(.active):not(.disabled):hover{
+	background-color: #e0e0e0;
+
+}
+
+div.page.disabled{
+  cursor: not-allowed;
+}
+
+div.active{
+	background-color: black;
+	color: white;
+}
+
+div.select{
+	margin-top: 30px;
+}

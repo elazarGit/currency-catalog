@@ -1,0 +1,22 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<h1> Available currencies </h1>
+
+<div class="searchField">
+  <label>Search box: </label><input type="text" value="{{searchStr}}" (change)="onSearch($event)"/>
+  <label class="filterLbl">Search by: </label><select class="filterOpt" value="{{filterCriteria}}" (change)="onChangeFilter($event)">
+    <option value="id" selected>id</option>
+    <option value="code">code</option>
+    <option value="name">name</option>
+    <option value="type">type</option>
+  </select>
+
+</div>
+<div class="currencies">
+  <div class="container">
+    <div *ngFor="let currency of currencies | slice:0:200" [routerLink]="['currency', currency.id]" > ID: {{currency.id}} Type: {{currency.attributes.currency_type}} Symbol: {{currency.attributes.symbol}}</div>
+  </div>
+
+  <app-page-navigation [pager]="pager" [currentPage]="currentPage" [size]="size" (pageChanged)="change($event)"></app-page-navigation>
+</div>
+
+
