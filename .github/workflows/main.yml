@@ -18,13 +18,23 @@ jobs:
       with:
         node-version: 16
 
+    - name: Remove gyp dependencies
+      run: |
+          rm -rf node_modules package-lock.json
+
+    - name: Remove node-sass
+      run: npm uninstall node-sass
+
+    - name: Remove node-sass  
+      run: npm install sass
+      
     - name: Install build tools for node-gyp
       run: |
         sudo apt-get update
-        sudo apt-get install -y python2 g++ make build-essential
+        sudo apt-get install -y python3 g++ make build-essential
 
-    - name: Configure node-gyp to use Python 2
-      run: npm config set python /usr/bin/python2
+    - name: Configure node-gyp to use Python 3
+      run: npm config set python /usr/bin/python3
     - name: Clean node_modules
       run: |
         rm -rf node_modules package-lock.json
