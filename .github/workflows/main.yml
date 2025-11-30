@@ -13,6 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Check for Python 2
+      run: |
+        if command -v python2 &>/dev/null; then
+          echo "Python 2 is installed: $(python2 --version)"
+        else
+          echo "Python 2 is NOT installed."
+          exit 1
+          
     # - name: Set up Python 2 and Add to PATH
     # - uses: actions/setup-python@v4
     #   with:
