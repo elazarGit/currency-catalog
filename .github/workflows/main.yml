@@ -13,10 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Python 2 and Add to PATH
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '2.7'
+    # - name: Set up Python 2 and Add to PATH
+    # - uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '2.7'
 
 
     - name: Set up Node.js
