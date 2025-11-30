@@ -1,3 +1,27 @@
 on:
   workflow_dispatch:
-  
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install Node.js dependencies
+      run: npm install
+      # If your frontend is in a subfolder (like 'frontend'), add 'working-directory: ./frontend'
+
+    - name: Build Node.js project
+      run: npm run build
+      # If your frontend is in a subfolder, add 'working-directory: ./frontend'
