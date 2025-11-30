@@ -18,6 +18,9 @@ jobs:
       with:
         node-version: 20
 
+    - name: Fix OpenSSL issue
+      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+
     - name: Install Node.js dependencies
       run: npm install
       # If your frontend is in a subfolder (like 'frontend'), add 'working-directory: ./frontend'
