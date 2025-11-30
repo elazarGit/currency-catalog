@@ -16,10 +16,11 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
-
-    - name: Fix OpenSSL issue
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+        node-version: 16
+    - name: Clean node_modules
+      run: |
+        rm -rf node_modules package-lock.json
+        npm install
 
     - name: Install Node.js dependencies
       run: npm install
