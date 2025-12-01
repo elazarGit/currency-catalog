@@ -21,7 +21,6 @@ jobs:
     - name: Remove node modules
       run: |
           rm -rf node_modules
-          rm -f package.json
           rm -f package-lock.json
 
     - name: Install Node.js dependencies
