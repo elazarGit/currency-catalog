@@ -21,9 +21,10 @@ jobs:
     - name: Install Python dependencies
       run: |
           sudo apt-get update
-          sudo apt-get install -y python2 g++ make build-essential
-          sudo ln -sf /usr/bin/python2 /usr/bin/python
+          sudo apt-get install -y python3 g++ make build-essential
+          npm config set python /usr/bin/python3
           python --version
+
     - name: Remove node modules
       run: |
           rm -rf node_modules
