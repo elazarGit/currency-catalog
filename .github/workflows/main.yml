@@ -16,11 +16,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 16
+        node-version: 20
+        cache: none
         
     - name: Remove node modules
       run: |
-          rm -rf node_modules package-lock.json
+          rm -rf node_modules
+          rm -f package.json
+          rm -f package-lock.json
 
     - name: Install Node.js dependencies
       run: npm install
