@@ -17,8 +17,8 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 16
-    - name: Python version
-      run: python --version
+    # - name: Python version
+    #   run: python --version
     # - name: Remove gyp dependencies
     #   run: |
     #       rm -rf node_modules package-lock.json
@@ -39,11 +39,11 @@ jobs:
     #     npm install
     #   continue-on-error: true
 
-    # - name: Install Node.js dependencies
-    #   run: npm install
-    #   continue-on-error: true
+    - name: Install Node.js dependencies
+      run: npm install
+      continue-on-error: true
     #   # If your frontend is in a subfolder (like 'frontend'), add 'working-directory: ./frontend'
 
-    # - name: Build Node.js project
-    #   run: npm run build
+    - name: Build Node.js project
+      run: npm run build
       # If your frontend is in a subfolder, add 'working-directory: ./frontend'
