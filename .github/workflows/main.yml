@@ -18,10 +18,10 @@ jobs:
       with:
         node-version: 16
     # - name: Python version
-    #   run: python --version
-    # - name: Remove gyp dependencies
-    #   run: |
-    #       rm -rf node_modules package-lock.json
+      # run: python --version
+    - name: Remove gyp dependencies
+      run: |
+          rm -rf node_modules package-lock.json
 
     # - name: Remove node-sass
     #   run: npm uninstall node-sass
