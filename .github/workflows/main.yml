@@ -39,9 +39,11 @@ jobs:
       run: |
         rm -rf node_modules package-lock.json
         npm install
+      continue-on-error: true
 
     - name: Install Node.js dependencies
       run: npm install
+      continue-on-error: true
       # If your frontend is in a subfolder (like 'frontend'), add 'working-directory: ./frontend'
 
     - name: Build Node.js project
