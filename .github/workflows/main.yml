@@ -21,7 +21,9 @@ jobs:
     - name: Install Python dependencies
       run: |
           sudo apt-get update
-          sudo apt-get install -y python3 g++ make build-essential
+          sudo apt-get install -y python2 g++ make build-essential
+          sudo ln -sf /usr/bin/python2 /usr/bin/python
+          python --version
     - name: Remove node modules
       run: |
           rm -rf node_modules
@@ -29,6 +31,8 @@ jobs:
 
     - name: Install Node.js dependencies
       run: npm install
+      env:
+        PYTHON: usr/bin/python2
       continue-on-error: true
     #   # If your frontend is in a subfolder (like 'frontend'), add 'working-directory: ./frontend'
 
