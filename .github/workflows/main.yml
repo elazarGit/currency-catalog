@@ -17,27 +17,10 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 16
-    # - name: Python version
-      # run: python --version
-    - name: Remove gyp dependencies
+        
+    - name: Remove node modules
       run: |
           rm -rf node_modules package-lock.json
-
-    # - name: Remove node-sass
-    #   run: npm uninstall node-sass
-    #   continue-on-error: true
-      
-    # - name: Install build tools for node-gyp
-    #   run: |
-    #     sudo apt-get update
-    #     sudo apt-get install -y python3 g++ make build-essential
-    #     echo python --version
-        
-    # - name: Clean node_modules
-    #   run: |
-    #     rm -rf node_modules package-lock.json
-    #     npm install
-    #   continue-on-error: true
 
     - name: Install Node.js dependencies
       run: npm install
