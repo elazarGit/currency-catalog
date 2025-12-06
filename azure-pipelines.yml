@@ -16,12 +16,13 @@ steps:
   displayName: 'Install Node.js'
 
 
-- name: Install Python 2
-  run: |
+
+- script: |
     sudo apt-get update
     sudo apt-get install -y python2
     echo "export PATH=\$PATH:/usr/bin/python2" >> ~/.bashrc
-    source ~/.bashrc 
+    source ~/.bashrc
+  displayName: 'Install Python 2'
 
 - script: |
     npm install -g @angular/cli
