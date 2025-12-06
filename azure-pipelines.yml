@@ -15,6 +15,14 @@ steps:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
 
+
+- name: Install Python 2
+  run: |
+    sudo apt-get update
+    sudo apt-get install -y python2
+    echo "export PATH=\$PATH:/usr/bin/python2" >> ~/.bashrc
+    source ~/.bashrc
+
 - script: |
     npm install -g @angular/cli
     npm install
